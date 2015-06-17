@@ -2,10 +2,20 @@ $icon-font-path: '../fonts/';
 
 // bower:scss
 @import "bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import url('http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900');
+@import url('http://fonts.googleapis.com/css?family=Karma:400,500,600,700,300');
 // endbower
+
+/* Variables */
 
 $body-background-color: #f6f6f6;
 $header-background-color: #FFFFFF;
+$lines-color: black;
+$lines-border-color: #e5e5e5;
+$font-color: black;
+$font-gray-color: #999999;
+
+/* Mixis */
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -16,28 +26,30 @@ $header-background-color: #FFFFFF;
 
 body {
   background-color: $body-background-color;
+  font-family: 'Lato', sans-serif;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+/* Buttons */
+
+.btn-default {
+  border: 1px solid $lines-color;
+  @include border-radius(0);
+  background-color: transparent;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
-/* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 2px solid $lines-border-color;
   background-color: $header-background-color;
 
   .nav {
     li {
       a {
         color: black;
-        font-size: 12px;
-        font-weight: bold;
-        padding: 15px 0;
+        font-size: 14px;
+        font-weight: 900;
+        padding: 25px 0;
       }
     }
   }
@@ -48,13 +60,34 @@ body {
     line-height: 40px;
     padding-bottom: 19px;
   }
+
+  hr {
+    border-color: $lines-color;
+    margin: 20px 0 0;
+  }
 }
 
-/* Custom page footer */
 .footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+  padding-top: 2px;
+  padding-bottom: 30px;
+  border-top: 4px solid $lines-color;
+  hr {
+    color: $lines-color;
+    border-top: 1px solid $lines-color;
+    padding-top: 3px;
+    margin: 0;
+  }
+  .nav {
+    li {
+      a {
+        color: black;
+        font-size: 12px;
+        letter-spacing: -1px;
+        font-weight: bold;
+        padding: 15px 0;
+      }
+    }
+  }  
 }
 
 .carousel {
@@ -64,12 +97,51 @@ body {
     margin-bottom: 0;
     border: 0;
     background-color: transparent;
+    .caption {
+      padding-top: 20px;
+      border-right: 0;
+      text-align: center;
+    }
     img {
       margin: 0 auto;
+      border: 8px solid white;
     }
+    h2 {
+      margin-top: 0;
+      margin-bottom: 5px;
+      font-size: 18px;
+      font-family: 'Karma', serif;
+      font-weight: bold;
+    }
+    h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    p {
+      font-size: 16px;
+      font-weight: bold;
+      color: $font-color;
+      small {
+        font-size: 12px;
+      }
+    }
+    a {
+      display: block;
+      font-weight: bold;
+      color: $font-color;
+      text-decoration: underline;
+      font-size: 11px;
+    }
+  }
+  .slider-controls {
+    position: absolute;
+    width: 100%;
   }
   .carousel-control {
     opacity: 1;
+    background: transparent;
     color: #000;
     &:hover {
       color: #000;
@@ -82,9 +154,16 @@ body {
   padding: 30px 0;
   margin-bottom: 50px;
   color: white;
+  .filter-select {
+    margin-bottom: 10px;
+  }
+  label {
+    font-weight: normal;
+    text-transform: uppercase;
+  }
   select {
     float: right;
-    min-width: 225px;
+    min-width: 220px;
     height: 30px;
     -webkit-appearance: none;
     @include border-radius(0);
@@ -99,16 +178,106 @@ body {
   .thumbnail {
     margin-bottom: 50px;
     padding: 0px;
+    border-bottom: 3px solid $lines-border-color;
+    img {
+      width: 100%;
+    }
+    h4 {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 16px;
+      font-family: 'Karma', serif;
+    }
+    h5 {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    p {
+      color: $font-gray-color;
+      font-size: 14px;
+      small {
+        font-size: 12px;
+      }
+    }
+    .btn-default {
+      text-align: center;
+      font-size: 12px;
+      padding: 6px 22px;
+      width: 100%;
+    }
+    .caption {
+      overflow: hidden;
+    }
+  }
+  .gallery-items {
+    margin-bottom: -50px;
+  }
+  .refresh-trigger {
+    text-align: center;
+    padding: 80px 0;
+    .btn-default {
+      padding: 20px 70px;
+    }
+  }
+}
+
+.contact {
+  margin-top: 30px;
+  p {
+    font-size: 13px;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 5px;
+    a {
+      color: $font-color;
+      text-decoration: underline;
+    }
+    &.small {
+      font-weight: normal;
+      font-size: 11px;
+    }
   }
 }
 
 /* Responsive: Mobile First */
+
+@media screen and (min-width: 768px) {
+  .carousel {
+    .thumbnail {
+      .caption {
+        text-align: right;
+        padding-top: 0;
+        border-right: 1px solid black;
+        a {
+          margin-top: 65px;
+        }
+      }
+    }
+    .slider-controls {
+      position: absolute;
+      width: 100%;
+      bottom: 30px;
+    }
+  }
+
+  .gallery-thumbnails {
+    .thumbnail {
+      .btn-default {
+        text-align: right;
+        font-size: 12px;
+        padding: 6px 22px;
+        width: auto;
+      }
+    }
+  }
+}
 @media screen and (min-width: 960px) {
   .container {
     max-width: 960px;
   }
 
-  /* Remove the padding we set earlier */
   .header,
   .marketing,
   .footer {
@@ -123,12 +292,21 @@ body {
       margin-bottom: 0;
       border: 0;
       background-color: transparent;
+      .caption {
+        padding-right: 30px;
+        border-right: 1px solid black;
+        text-align: right;
+      }
+      a {
+        margin-top: 65px;
+      }
     }
     .slider-controls {
         position: absolute;
         width: 50px;
         right: 10px;
         bottom: 15px;
+        top: initial;
     }
     .carousel-control {
       opacity: 1;
@@ -137,5 +315,17 @@ body {
         color: #000;
       }
     }
+  }
+
+  .gallery-filter {
+    .filter-select {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .col-sm-4.col-md-3.col-xs-6 {
+    width: 100%;
   }
 }
