@@ -51,11 +51,22 @@ body {
 
   .nav {
     li {
+      display: inline;
       a {
+        display: inline-block;
+        margin-right: 20px;
         color: black;
         font-size: 14px;
         font-weight: 900;
         padding: 25px 0;
+        &.social-btn {
+          margin-left: 20px;
+          margin-right: 0;
+          i {
+            padding: 0;
+            line-height: 0;
+          }
+        }
       }
     }
   }
@@ -110,12 +121,18 @@ body {
   }
   .nav {
     li {
+      display: inline;
       a {
+        display: inline-block;
+        margin-right: 10px;
         color: black;
         font-size: 12px;
-        letter-spacing: -1px;
+        letter-spacing: 0px;
         font-weight: bold;
-        padding: 15px 0;
+        padding: 10px 0;
+        &:hover {
+          background: transparent;
+        }
       }
     }
   }  
@@ -136,6 +153,7 @@ body {
     img {
       margin: 0 auto;
       border: 8px solid white;
+      min-height: 300px;
     }
     h2 {
       margin-top: 0;
@@ -256,7 +274,7 @@ body {
 }
 
 .contact {
-  margin-top: 30px;
+  margin-top: 10px;
   p {
     font-size: 13px;
     font-weight: bold;
