@@ -1,0 +1,21 @@
+/* Variables */
+
+$body-background-color: #f6f6f6;
+$header-background-color: #FFFFFF;
+$lines-color: black;
+$lines-border-color: #e5e5e5;
+$font-color: black;
+$font-gray-color: #999999;
+
+$navigation-font-color: #abaaaa;
+$navigation-active-color: #000000;
+
+
+/* Mixis */
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
