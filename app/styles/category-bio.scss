@@ -1,5 +1,5 @@
 .bio-wrapper {
-	margin-top: 80px;
+	margin-top: 40px;
 	.image-wrapper {
 		overflow: hidden;
 		height: 110px;
@@ -7,10 +7,10 @@
 			height: 100%;
 			width: auto;
 			max-width: none;
+			margin: 0 auto;
 		}
 	}
 	.nav-wrapper {
-		margin-left: -15px;
 		h1 {
 			text-transform: uppercase;
 			font-size: 24px;
@@ -30,7 +30,7 @@
 					border-color: $navigation-font-color;
 					border-bottom: 3px solid;
 					margin: 0;
-					padding: 8px 54px 14px 0;
+					padding: 8px 35px 14px 0;
 				}
 				&.active, &:hover {
 					a {
@@ -43,7 +43,7 @@
 	.tab-content {
 		border-top: 3px solid $navigation-font-color;
 		margin-top: -2px;
-		padding: 80px 0;
+		padding: 40px 0;
 		font-size: 16px;
 	}
 	.second-section {
@@ -61,4 +61,27 @@
 			}
 		}
 	}
+}
+
+@media screen and (max-width: 420px) {
+}
+@media screen and (min-width: 768px) {
+	.bio-wrapper {
+		margin-top: 80px;
+		.nav-wrapper {
+			margin-left: -15px;
+			.nav-tabs {
+				li {
+					a {
+						padding: 8px 54px 14px 0;
+					}
+				}
+			}
+		}
+		.tab-content {
+			padding: 80px 0;
+		}
+	}
+}
+@media screen and (min-width: 992px) {
 }
